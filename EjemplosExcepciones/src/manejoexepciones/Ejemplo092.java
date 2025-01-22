@@ -21,7 +21,7 @@ public class Ejemplo092 {
             try {
                 Scanner entrada = new Scanner(System.in);
                 System.out.println("Ingrese el pais,"
-                        + " siempre en mayuscula la primera :");
+                        + " siempre en mayuscula la primera letra:");
                 String valor1 = entrada.nextLine();// se espera un nombre de pais
                 char inicial = valor1.charAt(0);
                 if (inicial == 'A' || inicial == 'E' || inicial == 'I' || inicial
@@ -40,7 +40,8 @@ public class Ejemplo092 {
                 }
 
                 System.out.println("Continuamos");
-
+                
+                
             }
         
         }
