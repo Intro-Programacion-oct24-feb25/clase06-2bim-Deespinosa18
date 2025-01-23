@@ -5,33 +5,55 @@
 package manejoexepciones;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 /**
  *
  * @author utpl
  */
 public class ejempo12_ {
-  
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese cuantas operaciones quiere realizar");
         int valor = entrada.nextInt();
-        double div=0;
+
         int [] resultados = new int[valor];
-        for (int i = 0; i < resultados.length; i++) {
-            System.out.println("Ingrese el numerador");
-            double valor1 = entrada.nextDouble();
-            System.out.println("Ingrese el denominador");
-            double valor2 = entrada.nextDouble();
+
+        try {
+            for (int i = 0; i < resultados.length; i++) {
+                System.out.println("Ingrese el numerador");
+                int valor1 = entrada.nextInt();
+                System.out.println("Ingrese el denominador");
+                int valor2 = entrada.nextInt();
+
+                int div = valor1 / valor2;
+                resultados[i] = div;
+
+            }
             
-            div= valor1/valor2;
-            
-            
-       }
+        } catch (ArithmeticException e) {
+            System.out.println("(ArithmeticException) Ocurrio una excepcion" 
+                    + "de tipo " + e);
+        }
+        
+        } catch (InputMismatchException e) {
+            System.out.println("(InputMismatchException) Ocurrio una excepcion"
+                    + " de tipo " + e);
+        }
+        
+         } catch (Exception e) {
+            System.out.println(" Ocurrio una excepcion" + e);
+        }
+
         /*Realizar un proceso repetitivo que permita realizar la división de 
         números ingresados por teclado; el resultado de cada división debe ir 
         almacenandose en cada posición del arreglo. Considerar las excepciones
         posibles*/
-    }
-}  
+  
+
+
+
+
+
 

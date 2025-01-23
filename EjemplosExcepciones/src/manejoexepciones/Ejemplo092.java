@@ -16,6 +16,7 @@ public class Ejemplo092 {
 
     public static void main(String[] args) {
         boolean bandera = true;
+        String cadena = "";
 
         while (bandera) {
             try {
@@ -26,23 +27,22 @@ public class Ejemplo092 {
                 char inicial = valor1.charAt(0);
                 if (inicial == 'A' || inicial == 'E' || inicial == 'I' || inicial
                         == 'O' || inicial == 'U') {
-                    
                     bandera = true;
-             
+                    throw new Exception("Pais con vocal");
+
                 } else {
-                bandera = false;
-                   throw new Exception("Pais con consonante");
-                }
-      
-        } catch (Exception e) {
-            System.out.printf("Ocurrió una excepción %s\n", e);
+
+                    cadena = valor1;
+                    bandera = false;
 
                 }
+            } catch (Exception e) {
+                System.out.printf("Ocurrió una excepción %s\n", e);
 
-                System.out.println("Continuamos");
-                
-                
             }
-        
+
         }
+
     }
+
+}
